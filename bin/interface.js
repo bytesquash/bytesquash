@@ -172,7 +172,10 @@ module.exports = (() => {
       }
 
       this.validate(command);
+      
+      bsq.cli.commands = this.commands;
 
+      bsq.lifecycle.run(command.lifecycle);
     }
   }
 
