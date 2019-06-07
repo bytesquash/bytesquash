@@ -38,7 +38,9 @@ class ByteSquash {
       functions: {},
       hooks: [],
       apiBaseUrl: 'https://api.bytesquash.com/prod',
-
+      hostHttpUrl: `http://${process.env.HOST_IP}:${process.env.HOST_HTTP_PORT}`,
+      platform: process.env.PLATFORM,
+      
     }
   }
 }
