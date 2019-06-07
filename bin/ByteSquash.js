@@ -168,22 +168,21 @@ class ByteSquash {
     if (this.vars.project.isValid === true) {
       _.forEach(this.vars.project.plugins, (plugin) => {
         const pluginPath = findPluginPath(plugin);
-      });
+        if (pluginPath) {
+          const data = this
+            .yaml.parse(path.join(pluginPath, 'hooks.yml'))
+            .map((val) => {
+              val.path = path.join(pluginPath, val.path);
+              return val;
+            });
 
-      if (pluginPath) {
-        const data = this
-          .yaml.parse(path.join(pluginPath, 'hooks.yml'))
-          .map((val) => {
-            val.path = path.join(pluginPath, val.path);
-            return val;
+          this.vars.customPluginPaths.push({
+            path: path.join(pluginPath, 'index.js')
           });
 
-        this.vars.customPluginPaths.push({
-          path: path.join(pluginPath, 'index.js')
-        });
-
-        this.vars.hooks = this.vars.hooks.concat(data);
-      }
+          this.vars.hooks = this.vars.hooks.concat(data);
+        }
+      });
     };
   }
 }
