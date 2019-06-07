@@ -164,6 +164,12 @@ class ByteSquash {
 
       return pluginPath;
     };
+
+    if (this.vars.project.isValid === true) {
+      _.forEach(this.vars.project.plugins, (plugin) => {
+        const pluginPath = findPluginPath(plugin);
+      });
+    };
   }
 }
 
