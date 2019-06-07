@@ -57,7 +57,8 @@ class ByteSquash {
 
     this.cli = {
       params: new CommonCliParams(this),
-      
+      error: new CommonCliError(this),
+
     };
   }
 }
