@@ -70,6 +70,12 @@ module.exports = (() => {
     format(names) {
       return names.join(':');
     }
+
+    validate(cmdData) {
+      const args = this.args;
+
+      if (!cmdData) return args;
+    }
   }
 
   return CommandLineInterface;
