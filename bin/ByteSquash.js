@@ -77,6 +77,11 @@ class ByteSquash {
     this.validateVersion();
     this.loadHooks();
   }
+
+  loadProject() {
+    this.vars.project.isValid = false;
+
+  }
 }
 
 module.exports = new ByteSquash();
