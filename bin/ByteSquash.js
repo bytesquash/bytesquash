@@ -53,6 +53,8 @@ class ByteSquash {
 
     this.yaml = new CommonYaml(this);
 
+    this.loadProject();
+
   }
 }
 
