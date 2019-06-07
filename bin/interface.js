@@ -66,6 +66,10 @@ module.exports = (() => {
     get() {
       return this.commands;
     }
+
+    format(names) {
+      return names.join(':');
+    }
   }
 
   return CommandLineInterface;
