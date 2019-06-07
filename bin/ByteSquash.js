@@ -108,7 +108,7 @@ class ByteSquash {
     }, splitPath.length);
 
     if (this.vars.project.isValid === true) {
-
+      const buildPath = `${this.vars.project.path}/.build`;
     }
   }
 }
