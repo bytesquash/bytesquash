@@ -75,6 +75,9 @@ module.exports = (() => {
       const args = this.args;
 
       if (!cmdData) return args;
+
+      const helpCmdMsg = colors.yellow(`\n\n$ ${bin} ${colors.blue.bold('help')} ${args.names.join(':')}`);
+
     }
   }
 
