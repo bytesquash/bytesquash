@@ -16,3 +16,18 @@ const displayError = (error) => {
 
 process.on('uncaughtException', e => displayError(e));
 process.on('unhandledRejection', e => displayError(e));
+
+try {
+  const bsq = require('./ByteSquash');
+
+  bsq.init();
+
+  const CLI            = require('./cli');
+  const updateNotifier = require('update-notifier');
+
+  updateNotifier({ pkg }).notify();
+
+  CLI.run();
+} catch (e) {
+  displayError(e);
+}
