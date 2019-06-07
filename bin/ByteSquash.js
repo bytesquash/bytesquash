@@ -64,6 +64,7 @@ class ByteSquash {
     };
 
     this.utils = new CommonUtils(this);
+    this.lifecycle = new CommonLifecycle(this);
 
   }
 }
