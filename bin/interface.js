@@ -34,7 +34,11 @@ module.exports = (() => {
         pluginsCmdsPaths = _.concat(pluginsCmdsPaths, bsq.vars.customPluginPaths);
       }
 
+      const paths = _.concat(frameworkCmdsPaths, pluginsCmdsPaths);
 
+      _.forEach(paths, (val) => {
+        this.add(require(val.path), val.path); // eslint-disable-line global-require
+      });
     }
   }
 
