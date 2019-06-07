@@ -138,6 +138,9 @@ class ByteSquash {
     _.forOwn(frameworkPlugins.plugins, (plugin) => {
       const hookFile = `${__dirname}/../lib/plugins/${plugin}/hooks.yml`;
 
+      if (fs.existsSync(hookFile)) {
+        
+      };
     });
   }
 }
