@@ -104,7 +104,7 @@ class ByteSquash {
       }
 
       this.vars.project.isValid = true;
-
+      this.vars.project.path = currPath;
     });
   }
 }
