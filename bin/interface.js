@@ -53,7 +53,10 @@ module.exports = (() => {
           if (_.has(cmdObj, 'lifecycle')) {
             this.commands[cmd].lifecycle = _.concat(this.commands[cmd].lifecycle, cmdObj.lifecycle);
           }
-          
+
+          if (_.has(cmdObj, 'options')) {
+            _.assign(this.commands[cmd].options, cmdObj.options);
+          }
         } else {
           this.commands[cmd] = cmdObj;
         }
