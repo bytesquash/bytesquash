@@ -2,7 +2,7 @@
  * CLI manager
  */
 
-const sqz = require('./ByteSquash');
+const bsq = require('./ByteSquash');
 const path = require('path');
 const colors = require('colors/safe');
 const _ = require('lodash');
@@ -21,6 +21,14 @@ module.exports = (() => {
     constructor() {
       this.args = bsq.cli.params.get();
       this.commands = {};
+    }
+
+    load() {
+      const frameworkPath = path.resolve(`${__dirname}/../lib`);
+      const frameworkCmdsPaths = walkSync(path.resolve(`${__dirname}/../lib`), { globs: ['plugins/*/index.js'] })
+        .map(val => ({ path: path.join(frameworkPath, val) }));
+
+
     }
   }
 
