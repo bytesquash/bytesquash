@@ -5,3 +5,4 @@ const fs = require('fs');
 const path = require('path');
 
 const CommonArchiver = require('../lib/common/archiver');
+const CommonYaml = require('../lib/common/yaml');
