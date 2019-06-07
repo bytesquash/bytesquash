@@ -15,3 +15,4 @@ const CommonCliHelp = require('../lib/common/cli/help');
 const CommonUtils = require('../lib/common/utils');
 const CommonLifecycle = require('../lib/common/lifecycle');
 const CommonVariables = require('../lib/common/variables');
+const CommonVersion = require('../lib/common/version');
