@@ -143,6 +143,8 @@ class ByteSquash {
           val.path = `${__dirname}/../lib/plugins/${plugin}/${val.path}`;
           return val;
         });
+
+        this.vars.hooks = this.vars.hooks.concat(data);
       };
     });
   }
