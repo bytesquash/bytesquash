@@ -145,6 +145,8 @@ module.exports = (() => {
       let errorMsg = `Command "${colors.green(hintCmd)}" not found  ... \n`;
       const availableHelpCmds = [];
 
+      this.index(args, logo);
+
     }
   }
 
