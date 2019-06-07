@@ -103,6 +103,7 @@ module.exports = (() => {
             sqz.cli.log.error(`${colors.blue.bold(`--${key}`)} : ${value.validate.error}`);
           }
         }
+        check(value, key);
       });
     }
   }
