@@ -28,6 +28,12 @@ module.exports = (() => {
       const frameworkCmdsPaths = walkSync(path.resolve(`${__dirname}/../lib`), { globs: ['plugins/*/index.js'] })
         .map(val => ({ path: path.join(frameworkPath, val) }));
 
+      let pluginsCmdsPaths = [];
+
+      if (bsq.vars.project.isValid && bsq.vars.customPluginPaths.length > 0) {
+        pluginsCmdsPaths = _.concat(pluginsCmdsPaths, bsq.vars.customPluginPaths);
+      }
+
 
     }
   }
