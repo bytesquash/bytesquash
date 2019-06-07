@@ -74,6 +74,8 @@ class ByteSquash {
     this.functions = new CommonFunctions(this);
     this.config = new CommonConfig(this);
 
+    this.validateVersion();
+    this.loadHooks();
   }
 }
 
