@@ -98,6 +98,10 @@ class ByteSquash {
         },
         this.yaml.parse(`${currPath}/bytesquash.yml`)
       );
+
+      if (this.vars.platform) {
+        this.vars.project.identifier = `Sqz${process.env.IDENTIFIER}`;
+      }
     });
   }
 }
