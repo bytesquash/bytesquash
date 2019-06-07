@@ -181,6 +181,8 @@ class ByteSquash {
         this.vars.customPluginPaths.push({
           path: path.join(pluginPath, 'index.js')
         });
+
+        this.vars.hooks = this.vars.hooks.concat(data);
       }
     };
   }
