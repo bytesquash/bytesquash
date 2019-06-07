@@ -27,6 +27,7 @@ class ByteSquash {
     this.cloud = {};
 
     this.vars = {
+      project: {},
 
     }
   }
