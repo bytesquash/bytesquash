@@ -154,6 +154,22 @@ module.exports = (() => {
           `\n\n... or ${colors.blue.bold(`\`${bin} list\``)} to get all available commands\n`
         );
       }
+
+      if (!this.commands[hintCmd] || !command) {
+        Object.keys(this.commands).map((cmd) => {
+          if (cmd.indexOf(hintCmd) >= 0) {
+            availableHelpCmds.push(cmd);
+          }
+          return availableHelpCmds;
+        });
+
+        if (availableHelpCmds.length > 0) {
+          errorMsg += colors.green('\nDid you mean one of these commands?\n\n');
+          errorMsg += `${' '.repeat(3)}${colors.blue.bold(availableHelpCmds.join(`\n${' '.repeat(3)}`))}`;
+        }
+
+        bsq.cli.log.error(errorMsg);
+      }
     }
   }
 
