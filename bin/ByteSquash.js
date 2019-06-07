@@ -68,6 +68,7 @@ class ByteSquash {
     this.command = new CommonCommand(this);
     this.variables = new CommonVariables(this);
     this.archive = new CommonArchiver(this);
+    this.version = new CommonVersion(this);
 
   }
 }
