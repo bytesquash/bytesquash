@@ -17,3 +17,4 @@ const CommonLifecycle = require('../lib/common/lifecycle');
 const CommonVariables = require('../lib/common/variables');
 const CommonVersion = require('../lib/common/version');
 const CommonConfig = require('../lib/common/config');
+const CommonValidate = require('../lib/common/validate');
