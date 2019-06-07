@@ -118,6 +118,8 @@ class ByteSquash {
 
   validateVersion() {
     const minNodeVersion = 8;
+    const baseNodeVersion = parseInt(process.version.split('.')[0].replace(/\D/g, ''), 0);
+
   }
 }
 
