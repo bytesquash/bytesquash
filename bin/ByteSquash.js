@@ -80,6 +80,8 @@ class ByteSquash {
 
   loadProject() {
     this.vars.project.isValid = false;
+    
+    const splitPath = process.cwd().split('/');
 
   }
 }
