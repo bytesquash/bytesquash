@@ -50,6 +50,9 @@ class ByteSquash {
     if (process.argv[2] === 'deploy') {
       this.vars.deploy = true;
     }
+
+    this.yaml = new CommonYaml(this);
+
   }
 }
 
