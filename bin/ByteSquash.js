@@ -161,6 +161,8 @@ class ByteSquash {
           pluginPath = pluginBasePath;
         }
       });
+
+      return pluginPath;
     };
   }
 }
