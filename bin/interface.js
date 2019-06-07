@@ -93,14 +93,14 @@ module.exports = (() => {
 
       _.forEach(cmdData.options, (value, key) => {
         if (_.has(args.flags, value.flag)) {
-          sqz.cli.params.setOption(key, args.flags[value.flag]);
+          bsq.cli.params.setOption(key, args.flags[value.flag]);
         }
         if (value.boolean && args.options[key]) {
           args.options[key] = JSON.parse(args.options[key]);
         }
         if (_.has(value, 'validate')) {
           if (!value.validate.fn(args.options[key])) {
-            sqz.cli.log.error(`${colors.blue.bold(`--${key}`)} : ${value.validate.error}`);
+            bsq.cli.log.error(`${colors.blue.bold(`--${key}`)} : ${value.validate.error}`);
           }
         }
         check(value, key);
@@ -147,6 +147,13 @@ module.exports = (() => {
 
       this.index(args, logo);
 
+      if (args.names[0] === 'help' && args.args.length === 0) {
+        bsq.cli.log.error(
+          'Missing help command argument , please use ' +
+          `${colors.blue.bold(`\`${bin} help [command]\``)}` +
+          `\n\n... or ${colors.blue.bold(`\`${bin} list\``)} to get all available commands\n`
+        );
+      }
     }
   }
 
