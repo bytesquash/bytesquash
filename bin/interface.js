@@ -92,7 +92,9 @@ module.exports = (() => {
       };
 
       _.forEach(cmdData.options, (value, key) => {
-        
+        if (_.has(args.flags, value.flag)) {
+          sqz.cli.params.setOption(key, args.flags[value.flag]);
+        }
       });
     }
   }
