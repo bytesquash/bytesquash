@@ -116,6 +116,7 @@ module.exports = (() => {
           '* Docs: docs.bytesquash.com\n' +
           '* Chat: chat.bytesquash.com\n' +
           '* Bugs: github.com/ByteSquash/bytesquash/issues\n\n' +
+          `* For debugging add ${colors.blue.bold('--debug')} flag\n`;
 
       }
     }
