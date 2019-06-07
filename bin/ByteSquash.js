@@ -11,3 +11,4 @@ const CommonCliError = require('../lib/common/cli/error');
 const CommonCliLoader = require('../lib/common/cli/loader');
 const CommonCliLog = require('../lib/common/cli/log');
 const CommonCliParams = require('../lib/common/cli/params');
+const CommonCliHelp = require('../lib/common/cli/help');
