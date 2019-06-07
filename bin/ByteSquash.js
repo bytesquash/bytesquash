@@ -169,6 +169,15 @@ class ByteSquash {
       _.forEach(this.vars.project.plugins, (plugin) => {
         const pluginPath = findPluginPath(plugin);
       });
+
+      if (pluginPath) {
+        const data = this
+            .yaml.parse(path.join(pluginPath, 'hooks.yml'))
+            .map((val) => {
+              val.path = path.join(pluginPath, val.path);
+              return val;
+            });
+      }
     };
   }
 }
