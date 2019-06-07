@@ -46,6 +46,10 @@ class ByteSquash {
         uploadPaths: []
       }
     }
+
+    if (process.argv[2] === 'deploy') {
+      this.vars.deploy = true;
+    }
   }
 }
 
