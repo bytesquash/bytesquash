@@ -126,6 +126,7 @@ module.exports = (() => {
 
     run() {
       const args = this.args;
+      const command = this.commands[args.names.join(':')];
 
     }
   }
