@@ -153,6 +153,14 @@ class ByteSquash {
     const findPluginPath = (plugin) => {
       const paths = ['plugins', 'node_modules'];
       let pluginPath = null;
+
+      _.forEach(paths, (val) => {
+        const pluginBasePath = path.join(projectPath, val, plugin);
+        const hookPath = path.join(pluginBasePath, 'hooks.yml');
+        if (fs.existsSync(hookPath)) {
+          pluginPath = pluginBasePath;
+        }
+      });
     };
   }
 }
