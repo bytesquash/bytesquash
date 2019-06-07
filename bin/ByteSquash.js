@@ -80,9 +80,14 @@ class ByteSquash {
 
   loadProject() {
     this.vars.project.isValid = false;
-    
+
     const splitPath = process.cwd().split('/');
 
+    // search the current cwd backwards for a valid project
+    splitPath.reduce((curr) => {
+      const currPath = splitPath.slice(0, curr).join('/');
+
+    });
   }
 }
 
