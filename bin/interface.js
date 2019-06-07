@@ -115,6 +115,7 @@ module.exports = (() => {
           `* Help: ${colors.blue.bold('bsq help [command]')}\n` +
           '* Docs: docs.bytesquash.com\n' +
           '* Chat: chat.bytesquash.com\n' +
+          '* Bugs: github.com/ByteSquash/bytesquash/issues\n\n' +
 
       }
     }
