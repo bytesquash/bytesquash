@@ -123,6 +123,11 @@ module.exports = (() => {
         process.exit(0);
       }
     }
+
+    run() {
+      const args = this.args;
+
+    }
   }
 
   return CommandLineInterface;
