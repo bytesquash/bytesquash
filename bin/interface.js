@@ -141,6 +141,10 @@ module.exports = (() => {
       logo = `${logo}|   __ <|  |  ||   _|  -__|    |__     ||  _  |  |  |  _  |__ --||     |\n`;
       logo = `${logo}|______/|___  ||____|_____|    |_______||__   |_____|___._|_____||__|__|\n`;
       logo = `${logo}        |_____|                            |__|             ${cliVersion}\n`;
+
+      let errorMsg = `Command "${colors.green(hintCmd)}" not found  ... \n`;
+      const availableHelpCmds = [];
+
     }
   }
 
