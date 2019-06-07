@@ -106,6 +106,12 @@ module.exports = (() => {
         check(value, key);
       });
     }
+
+    index(args, logo) {
+      if (args.names.length === 0) {
+
+      }
+    }
   }
 
   return CommandLineInterface;
