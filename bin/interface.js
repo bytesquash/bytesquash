@@ -128,6 +128,7 @@ module.exports = (() => {
       const args = this.args;
       const command = this.commands[args.names.join(':')];
       const hintCmd = args.names[0] === 'help' ? args.args[0] : args.names.join(':');
+      const cliVersion = `Framework Version ${colors.blue.bold(`${settings.version}`)}`;
 
     }
   }
