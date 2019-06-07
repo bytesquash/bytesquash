@@ -132,6 +132,7 @@ class ByteSquash {
   }
 
   loadHooks() {
+    /* load frameworks hooks */
     const frameworkPlugins = this.yaml.parse(`${__dirname}/../lib/plugins/plugins.yml`);
     const projectPath = this.vars.project.path;
 
@@ -147,6 +148,12 @@ class ByteSquash {
         this.vars.hooks = this.vars.hooks.concat(data);
       };
     });
+
+    /* load plugins hooks */
+    const findPluginPath = (plugin) => {
+      const paths = ['plugins', 'node_modules'];
+      let pluginPath = null;
+    };
   }
 }
 
