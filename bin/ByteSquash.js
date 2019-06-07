@@ -41,7 +41,10 @@ class ByteSquash {
       hostHttpUrl: `http://${process.env.HOST_IP}:${process.env.HOST_HTTP_PORT}`,
       platform: process.env.PLATFORM,
       outputs: {},
-
+      assets: {
+        functions: [],
+        uploadPaths: []
+      }
     }
   }
 }
