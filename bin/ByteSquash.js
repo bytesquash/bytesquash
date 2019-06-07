@@ -59,6 +59,7 @@ class ByteSquash {
       params: new CommonCliParams(this),
       error: new CommonCliError(this),
       loader: new CommonCliLoader(this),
+      log: new CommonCliLog(this),
 
     };
   }
