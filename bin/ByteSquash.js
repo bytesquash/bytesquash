@@ -36,6 +36,7 @@ class ByteSquash {
         functions: {}
       },
       functions: {},
+      hooks: [],
 
     }
   }
