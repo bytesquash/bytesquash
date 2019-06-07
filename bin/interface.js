@@ -130,6 +130,17 @@ module.exports = (() => {
       const hintCmd = args.names[0] === 'help' ? args.args[0] : args.names.join(':');
       const cliVersion = `Framework Version ${colors.blue.bold(`${settings.version}`)}`;
 
+      /**
+       * ascii art generated with the help of :
+       * http://patorjk.com/software/taag/#p=display&f=Chunky&t=Byte%20Squash
+       */
+      let logo = '';
+      logo = `${logo}                                 \n`;
+      logo = `${logo} ______         __              _______                           __    \n`;
+      logo = `${logo}|   __ \\.--.--.|  |_.-----.    |     __|.-----.--.--.---.-.-----.|  |--.\n`;
+      logo = `${logo}|   __ <|  |  ||   _|  -__|    |__     ||  _  |  |  |  _  |__ --||     |\n`;
+      logo = `${logo}|______/|___  ||____|_____|    |_______||__   |_____|___._|_____||__|__|\n`;
+      logo = `${logo}        |_____|                            |__|             ${cliVersion}\n`;
     }
   }
 
