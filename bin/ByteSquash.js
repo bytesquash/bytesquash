@@ -105,7 +105,11 @@ class ByteSquash {
 
       this.vars.project.isValid = true;
       this.vars.project.path = currPath;
-    });
+    }, splitPath.length);
+
+    if (this.vars.project.isValid === true) {
+
+    }
   }
 }
 
