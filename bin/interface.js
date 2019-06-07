@@ -118,6 +118,9 @@ module.exports = (() => {
           '* Bugs: github.com/ByteSquash/bytesquash/issues\n\n' +
           `* For debugging add ${colors.blue.bold('--debug')} flag\n`;
 
+        bsq.cli.log.console(msg.replace(/^/gm, ' '.repeat(1)));
+
+        process.exit(0);
       }
     }
   }
