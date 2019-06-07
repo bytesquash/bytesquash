@@ -62,6 +62,9 @@ class ByteSquash {
       log: new CommonCliLog(this),
       help: new CommonCliHelp(this)
     };
+
+    this.utils = new CommonUtils(this);
+
   }
 }
 
