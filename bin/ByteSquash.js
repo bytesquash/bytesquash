@@ -115,6 +115,10 @@ class ByteSquash {
       }
     }
   }
+
+  validateVersion() {
+    const minNodeVersion = 8;
+  }
 }
 
 module.exports = new ByteSquash();
