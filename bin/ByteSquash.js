@@ -130,6 +130,11 @@ class ByteSquash {
       this.vars.stage = this.cli.params.get().options.stage;
     }
   }
+
+  loadHooks() {
+    const frameworkPlugins = this.yaml.parse(`${__dirname}/../lib/plugins/plugins.yml`);
+    
+  }
 }
 
 module.exports = new ByteSquash();
