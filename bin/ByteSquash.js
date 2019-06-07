@@ -55,6 +55,10 @@ class ByteSquash {
 
     this.loadProject();
 
+    this.cli = {
+      params: new CommonCliParams(this),
+      
+    };
   }
 }
 
