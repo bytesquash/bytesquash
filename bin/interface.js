@@ -170,6 +170,9 @@ module.exports = (() => {
 
         bsq.cli.log.error(errorMsg);
       }
+
+      this.validate(command);
+
     }
   }
 
