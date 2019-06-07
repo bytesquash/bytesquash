@@ -20,3 +20,12 @@ const CommonConfig = require('../lib/common/config');
 const CommonValidate = require('../lib/common/validate');
 const CommonChecksums = require('../lib/common/checksums');
 const CommonFunctions = require('../lib/common/functions');
+
+class ByteSquash {
+  init() {
+    this.deploy = {};
+    this.cloud = {};
+  }
+}
+
+module.exports = new ByteSquash();
