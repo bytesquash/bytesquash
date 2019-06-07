@@ -109,7 +109,8 @@ module.exports = (() => {
 
     index(args, logo) {
       if (args.names.length === 0) {
-
+        const msg =
+          `${colors.blue.bold(logo)}\n` +
       }
     }
   }
