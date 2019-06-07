@@ -88,8 +88,16 @@ class ByteSquash {
       const currPath = splitPath.slice(0, curr).join('/');
 
       if (fs.existsSync(`${currPath}/bytesquash.yml`)) {
-
+        this.vars.project.identifier = _.upperFirst(
+          _.camelCase(this.yaml.parse(`${currPath}/bytesquash.yml`).name)
+        );
       };
+      this.vars.project = _.assign(
+        {
+          identifier: this.vars.project.identifier
+        },
+        this.yaml.parse(`${currPath}/bytesquash.yml`)
+      );
     });
   }
 }
