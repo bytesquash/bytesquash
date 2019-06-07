@@ -25,6 +25,10 @@ class ByteSquash {
   init() {
     this.deploy = {};
     this.cloud = {};
+
+    this.vars = {
+
+    }
   }
 }
 
