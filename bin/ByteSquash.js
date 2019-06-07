@@ -66,6 +66,7 @@ class ByteSquash {
     this.utils = new CommonUtils(this);
     this.lifecycle = new CommonLifecycle(this);
     this.command = new CommonCommand(this);
+    this.variables = new CommonVariables(this);
 
   }
 }
