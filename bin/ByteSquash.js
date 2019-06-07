@@ -120,6 +120,15 @@ class ByteSquash {
     const minNodeVersion = 8;
     const baseNodeVersion = parseInt(process.version.split('.')[0].replace(/\D/g, ''), 0);
 
+    if (baseNodeVersion < minNodeVersion) {
+      this.cli.log.error(
+        `ByteSquash framework requires at least NodeJS version "${minNodeVersion}"`
+      );
+    }
+
+    if (this.cli.params.get().options.stage) {
+      this.vars.stage = this.cli.params.get().options.stage;
+    }
   }
 }
 
