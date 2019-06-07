@@ -98,6 +98,11 @@ module.exports = (() => {
         if (value.boolean && args.options[key]) {
           args.options[key] = JSON.parse(args.options[key]);
         }
+        if (_.has(value, 'validate')) {
+          if (!value.validate.fn(args.options[key])) {
+            sqz.cli.log.error(`${colors.blue.bold(`--${key}`)} : ${value.validate.error}`);
+          }
+        }
       });
     }
   }
