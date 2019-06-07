@@ -139,7 +139,10 @@ class ByteSquash {
       const hookFile = `${__dirname}/../lib/plugins/${plugin}/hooks.yml`;
 
       if (fs.existsSync(hookFile)) {
-        
+        const data = this.yaml.parse(hookFile).map((val) => {
+          val.path = `${__dirname}/../lib/plugins/${plugin}/${val.path}`;
+          return val;
+        });
       };
     });
   }
