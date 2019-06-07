@@ -13,3 +13,16 @@ const settings = require('../package.json');
 const bin = Object.keys(settings.bin)[0];
 
 /* eslint no-param-reassign: 0, no-shadow: 0, prefer-template : 0 */
+
+module.exports = (() => {
+  'use strict';
+
+  class CommandLineInterface {
+    constructor() {
+      this.args = bsq.cli.params.get();
+      this.commands = {};
+    }
+  }
+
+  return CommandLineInterface;
+})();
