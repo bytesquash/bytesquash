@@ -72,6 +72,7 @@ class ByteSquash {
     this.validate = new CommonValidate(this);
     this.checksums = new CommonChecksums(this);
     this.functions = new CommonFunctions(this);
+    this.config = new CommonConfig(this);
 
   }
 }
