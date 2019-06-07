@@ -111,6 +111,8 @@ module.exports = (() => {
       if (args.names.length === 0) {
         const msg =
           `${colors.blue.bold(logo)}\n` +
+          `* List commands: ${colors.blue.bold('sqz list')}\n` +
+
       }
     }
   }
