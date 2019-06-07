@@ -50,6 +50,9 @@ module.exports = (() => {
 
       command.commands.forEach((cmdObj) => {
         if (_.has(this.commands, cmd)) {
+          if (_.has(cmdObj, 'lifecycle')) {
+            this.commands[cmd].lifecycle = _.concat(this.commands[cmd].lifecycle, cmdObj.lifecycle);
+          }
           
         } else {
           this.commands[cmd] = cmdObj;
