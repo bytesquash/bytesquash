@@ -62,6 +62,10 @@ module.exports = (() => {
         }
       });
     }
+
+    get() {
+      return this.commands;
+    }
   }
 
   return CommandLineInterface;
