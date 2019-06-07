@@ -37,6 +37,7 @@ class ByteSquash {
       },
       functions: {},
       hooks: [],
+      apiBaseUrl: 'https://api.bytesquash.com/prod',
 
     }
   }
