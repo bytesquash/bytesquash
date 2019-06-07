@@ -29,7 +29,9 @@ class ByteSquash {
     this.vars = {
       project: {},
       customPluginPaths: [],
-
+      previousChecksums: {
+        functions: {}
+      },
     }
   }
 }
