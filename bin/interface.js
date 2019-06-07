@@ -40,6 +40,22 @@ module.exports = (() => {
         this.add(require(val.path), val.path); // eslint-disable-line global-require
       });
     }
+
+    add(CommandConstructor, path, options) {
+      const command = new CommandConstructor(bsq, options);
+
+      if (!_.has(command, 'commands')) {
+        bsq.cli.log.error(`No available command constructor found in "${path}"`);
+      }
+
+      command.commands.forEach((cmdObj) => {
+        if (_.has(this.commands, cmd)) {
+          
+        } else {
+          this.commands[cmd] = cmdObj;
+        }
+      });
+    }
   }
 
   return CommandLineInterface;
