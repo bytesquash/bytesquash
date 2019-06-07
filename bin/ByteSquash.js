@@ -35,6 +35,8 @@ class ByteSquash {
       currentChecksums: {
         functions: {}
       },
+      functions: {},
+
     }
   }
 }
