@@ -90,6 +90,10 @@ module.exports = (() => {
           args.options[key] = value.defaultValue;
         }
       };
+
+      _.forEach(cmdData.options, (value, key) => {
+        
+      });
     }
   }
 
