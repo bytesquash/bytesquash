@@ -87,6 +87,9 @@ class ByteSquash {
     splitPath.reduce((curr) => {
       const currPath = splitPath.slice(0, curr).join('/');
 
+      if (fs.existsSync(`${currPath}/bytesquash.yml`)) {
+
+      };
     });
   }
 }
