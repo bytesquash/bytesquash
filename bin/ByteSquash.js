@@ -133,7 +133,8 @@ class ByteSquash {
 
   loadHooks() {
     const frameworkPlugins = this.yaml.parse(`${__dirname}/../lib/plugins/plugins.yml`);
-    
+    const projectPath = this.vars.project.path;
+
   }
 }
 
