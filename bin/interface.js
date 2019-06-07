@@ -95,6 +95,9 @@ module.exports = (() => {
         if (_.has(args.flags, value.flag)) {
           sqz.cli.params.setOption(key, args.flags[value.flag]);
         }
+        if (value.boolean && args.options[key]) {
+          args.options[key] = JSON.parse(args.options[key]);
+        }
       });
     }
   }
