@@ -78,6 +78,18 @@ module.exports = (() => {
 
       const helpCmdMsg = colors.yellow(`\n\n$ ${bin} ${colors.blue.bold('help')} ${args.names.join(':')}`);
 
+      const check = (value, key) => {
+        if (value.required === true) {
+          if (!_.has(args.options, key) && !_.has(args.flags, value.flag)) {
+            bsq.cli.log.error(`Missing option ${colors.green(`--${key}`)}  ${helpCmdMsg}`);
+          } else if (!args.options[key] && !args.flags[value.flag]) {
+            bsq.cli.log.error(`Missing option ${colors.green(`--${key}`)} ` +
+              `${colors.red('value')} ${helpCmdMsg}`);
+          }
+        } else if (!args.options[key] && value.defaultValue !== null) {
+          args.options[key] = value.defaultValue;
+        }
+      };
     }
   }
 
