@@ -60,7 +60,7 @@ class ByteSquash {
       error: new CommonCliError(this),
       loader: new CommonCliLoader(this),
       log: new CommonCliLog(this),
-
+      help: new CommonCliHelp(this)
     };
   }
 }
