@@ -28,3 +28,5 @@ coverage.json
 
 **/src/.vars.json
 **/src/vars.json
+
+.vscode
