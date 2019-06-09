@@ -100,7 +100,7 @@ class ByteSquash {
       );
 
       if (this.vars.platform) {
-        this.vars.project.identifier = `Sqz${process.env.IDENTIFIER}`;
+        this.vars.project.identifier = `Bsq${process.env.IDENTIFIER}`;
       }
 
       this.vars.project.isValid = true;
