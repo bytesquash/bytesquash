@@ -1,0 +1,14 @@
+{
+  "name": "bytesquash",
+  "version": "1.1.0beta1",
+  "preferGlobal": true,
+  "description": "Build fullstack serverless apps",
+  "homepage": "https://bytesquash.com/",
+  "bin": {
+    "bsq": "bin/bin.js",
+    "bytesquash": "bin/bin.js"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}
