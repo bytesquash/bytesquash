@@ -2,11 +2,11 @@
  * CLI manager
  */
 
-const bsq = require('./ByteSquash');
 const path = require('path');
 const colors = require('colors/safe');
 const _ = require('lodash');
 const walkSync = require('walk-sync');
+const bsq = require('./ByteSquash');
 
 const settings = require('../package.json');
 
@@ -172,7 +172,7 @@ module.exports = (() => {
       }
 
       this.validate(command);
-      
+
       bsq.cli.commands = this.commands;
 
       bsq.lifecycle.run(command.lifecycle);
