@@ -72,7 +72,7 @@ module.exports = (() => {
     }
 
     validate(cmdData) {
-      const args = this.args;
+      const { args } = this;
 
       if (!cmdData) return args;
 
@@ -109,14 +109,13 @@ module.exports = (() => {
 
     index(args, logo) {
       if (args.names.length === 0) {
-        const msg =
-          `${colors.blue.bold(logo)}\n` +
-          `* List commands: ${colors.blue.bold('bsq list')}\n` +
-          `* Help: ${colors.blue.bold('bsq help [command]')}\n` +
-          '* Docs: docs.bytesquash.com\n' +
-          '* Chat: chat.bytesquash.com\n' +
-          '* Bugs: github.com/ByteSquash/bytesquash/issues\n\n' +
-          `* For debugging add ${colors.blue.bold('--debug')} flag\n`;
+        const msg = `${colors.blue.bold(logo)}\n`
+        + `* List commands: ${colors.blue.bold('bsq list')}\n`
+        +  `* Help: ${colors.blue.bold('bsq help [command]')}\n`
+        +  '* Docs: docs.bytesquash.com\n'
+        +  '* Chat: chat.bytesquash.com\n'
+        +  '* Bugs: github.com/ByteSquash/bytesquash/issues\n\n'
+        +  `* For debugging add ${colors.blue.bold('--debug')} flag\n`;
 
         bsq.cli.log.console(msg.replace(/^/gm, ' '.repeat(1)));
 
@@ -125,7 +124,7 @@ module.exports = (() => {
     }
 
     run() {
-      const args = this.args;
+      const { args } = this;
       const command = this.commands[args.names.join(':')];
       const hintCmd = args.names[0] === 'help' ? args.args[0] : args.names.join(':');
       const cliVersion = `Framework Version ${colors.blue.bold(`${settings.version}`)}`;
