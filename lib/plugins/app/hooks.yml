@@ -1,0 +1,6 @@
+- identifier : 'app:validate'
+  path : 'validate'
+  function : 'run'
+- identifier : 'app:info'
+  path : 'info'
+  function : 'run'
