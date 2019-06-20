@@ -1,0 +1,17 @@
+plugins:
+  - config
+  - test
+  - deploy
+  - run
+  - help
+  - list
+  - init
+  - app
+  - functions
+  - create
+  - serve
+  - version
+  - install
+  - compile
+  - fileutils
+  - key
