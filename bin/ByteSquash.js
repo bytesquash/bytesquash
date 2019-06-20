@@ -27,7 +27,7 @@ class ByteSquash {
     this.cloud = {};
 
     this.vars = {
-      project: {},
+      app: {},
       customPluginPaths: [],
       previousChecksums: {
         functions: {}
@@ -53,7 +53,7 @@ class ByteSquash {
 
     this.yaml = new CommonYaml(this);
 
-    this.loadProject();
+    this.loadApp();
 
     this.cli = {
       params: new CommonCliParams(this),
@@ -78,38 +78,38 @@ class ByteSquash {
     this.loadHooks();
   }
 
-  loadProject() {
-    this.vars.project.isValid = false;
+  loadApp() {
+    this.vars.app.isValid = false;
 
     const splitPath = process.cwd().split('/');
 
-    // search the current cwd backwards for a valid project
+    // search the current cwd backwards for a valid app
     splitPath.reduce((curr) => {
       const currPath = splitPath.slice(0, curr).join('/');
 
       if (fs.existsSync(`${currPath}/bytesquash.yml`)) {
-        this.vars.project.identifier = _.upperFirst(
+        this.vars.app.identifier = _.upperFirst(
           _.camelCase(this.yaml.parse(`${currPath}/bytesquash.yml`).name)
         );
       };
-      this.vars.project = _.assign(
+      this.vars.app = _.assign(
         {
-          identifier: this.vars.project.identifier
+          identifier: this.vars.app.identifier
         },
         this.yaml.parse(`${currPath}/bytesquash.yml`)
       );
 
       if (this.vars.platform) {
-        this.vars.project.identifier = `Bsq${process.env.IDENTIFIER}`;
+        this.vars.app.identifier = `Bsq${process.env.IDENTIFIER}`;
       }
 
-      this.vars.project.isValid = true;
-      this.vars.project.path = currPath;
+      this.vars.app.isValid = true;
+      this.vars.app.path = currPath;
     }, splitPath.length);
 
-    if (this.vars.project.isValid === true) {
-      const buildPath = `${this.vars.project.path}/.build`;
-      this.vars.project.buildPath = buildPath;
+    if (this.vars.app.isValid === true) {
+      const buildPath = `${this.vars.app.path}/.build`;
+      this.vars.app.buildPath = buildPath;
       if (!fs.existsSync(buildPath)) {
         fs.mkdirSync(buildPath);
       }
@@ -134,7 +134,7 @@ class ByteSquash {
   loadHooks() {
     /* load frameworks hooks */
     const frameworkPlugins = this.yaml.parse(`${__dirname}/../lib/plugins/plugins.yml`);
-    const projectPath = this.vars.project.path;
+    const appPath = this.vars.app.path;
 
     _.forOwn(frameworkPlugins.plugins, (plugin) => {
       const hookFile = `${__dirname}/../lib/plugins/${plugin}/hooks.yml`;
@@ -155,7 +155,7 @@ class ByteSquash {
       let pluginPath = null;
 
       _.forEach(paths, (val) => {
-        const pluginBasePath = path.join(projectPath, val, plugin);
+        const pluginBasePath = path.join(appPath, val, plugin);
         const hookPath = path.join(pluginBasePath, 'hooks.yml');
         if (fs.existsSync(hookPath)) {
           pluginPath = pluginBasePath;
@@ -165,8 +165,8 @@ class ByteSquash {
       return pluginPath;
     };
 
-    if (this.vars.project.isValid === true) {
-      _.forEach(this.vars.project.plugins, (plugin) => {
+    if (this.vars.app.isValid === true) {
+      _.forEach(this.vars.app.plugins, (plugin) => {
         const pluginPath = findPluginPath(plugin);
         if (pluginPath) {
           const data = this

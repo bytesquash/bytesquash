@@ -30,7 +30,7 @@ module.exports = (() => {
 
       let pluginsCmdsPaths = [];
 
-      if (bsq.vars.project.isValid && bsq.vars.customPluginPaths.length > 0) {
+      if (bsq.vars.app.isValid && bsq.vars.customPluginPaths.length > 0) {
         pluginsCmdsPaths = _.concat(pluginsCmdsPaths, bsq.vars.customPluginPaths);
       }
 
