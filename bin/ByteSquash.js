@@ -39,13 +39,13 @@ class ByteSquash {
       hooks: [],
       apiBaseUrl: 'https://api.bytesquash.com/prod',
       hostHttpUrl: `http://${process.env.HOST_IP}:${process.env.HOST_HTTP_PORT}`,
-      platform: process.env.PLATFORM,
+      launchpad: process.env.LAUNCHPAD,
       outputs: {},
       assets: {
         functions: [],
         uploadPaths: []
       }
-    }
+    };
 
     if (process.argv[2] === 'deploy') {
       this.vars.deploy = true;
@@ -88,23 +88,24 @@ class ByteSquash {
       const currPath = splitPath.slice(0, curr).join('/');
 
       if (fs.existsSync(`${currPath}/bytesquash.yml`)) {
-        this.vars.app.identifier = _.upperFirst(
+        this.vars.project.identifier = _.upperFirst(
           _.camelCase(this.yaml.parse(`${currPath}/bytesquash.yml`).name)
         );
-      };
-      this.vars.app = _.assign(
-        {
-          identifier: this.vars.app.identifier
-        },
-        this.yaml.parse(`${currPath}/bytesquash.yml`)
-      );
+        this.vars.project = _.assign(
+          {
+            identifier: this.vars.project.identifier
+          },
+          this.yaml.parse(`${currPath}/bytesquash.yml`)
+        );
 
-      if (this.vars.platform) {
-        this.vars.app.identifier = `Bsq${process.env.IDENTIFIER}`;
+        if (this.vars.launchpad) {
+          this.vars.project.identifier = `ByteSquash${process.env.IDENTIFIER}`;
+        }
+
+        this.vars.project.isValid = true;
+        this.vars.project.path = currPath;
       }
-
-      this.vars.app.isValid = true;
-      this.vars.app.path = currPath;
+      return curr - 1;
     }, splitPath.length);
 
     if (this.vars.app.isValid === true) {
