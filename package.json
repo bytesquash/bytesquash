@@ -8,14 +8,34 @@
     "bsq": "bin/bin.js",
     "bytesquash": "bin/bin.js"
   },
-  "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.13.0"
-  },
+
+  "keywords": [
+    "bytesquash",
+    "fullstack",
+    "serverless",
+    "serverless framework",
+    "microservices",
+    "micro",
+    "service",
+    "microservices",
+    "aws lambda",
+    "lambda",
+    "API",
+    "web",
+    "web app",
+    "swagger",
+    "reactjs",
+    "aws",
+    "amazon web services lambda",
+    "api gateway",
+    "cloudfront",
+    "azure functions",
+    "google cloud functions",
+    "ibm openwhisk",
+    "iot",
+    "internet of things",
+    "apps"
+  ],
   "dependencies": {
     "archiver": "^3.0.0",
     "colors": "^1.3.3",
@@ -25,5 +45,15 @@
     "update-notifier": "^3.0.0",
     "walk-sync": "^1.1.3",
     "yaml-include": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "jest": "^24.8.0",
+    "jsinspect": "^0.12.7"
   }
 }
