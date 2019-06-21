@@ -1,6 +1,10 @@
 #### Website : [bytesquash.com](https://bytesquash.com)
 #### Docs : [docs.bytesquash.com](https://docs.bytesquash.com/)
 
+[![Build Status](https://travis-ci.org/ByteSquash/bytesquash.svg?branch=master)](https://travis-ci.org/ByteSquash/bytesquash)
+[![npm version](https://badge.fury.io/js/bytesquash.svg)](https://badge.fury.io/js/bytesquash)
+[![DUB](https://img.shields.io/dub/l/vibe-d.svg)]()
+
 ### Contents
 
 * [Getting Started](#getting-started)
