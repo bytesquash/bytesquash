@@ -85,8 +85,8 @@ module.exports = (() => {
           if (!_.has(args.options, key) && !_.has(args.flags, value.flag)) {
             bsq.cli.log.error(`Missing option ${colors.green(`--${key}`)}  ${helpCmdMsg}`);
           } else if (!args.options[key] && !args.flags[value.flag]) {
-            bsq.cli.log.error(`Missing option ${colors.green(`--${key}`)} ` +
-              `${colors.red('value')} ${helpCmdMsg}`);
+            bsq.cli.log.error(`Missing option ${colors.green(`--${key}`)} `
+              + `${colors.red('value')} ${helpCmdMsg}`);
           }
         } else if (!args.options[key] && value.defaultValue !== null) {
           args.options[key] = value.defaultValue;
@@ -112,13 +112,13 @@ module.exports = (() => {
     index(args, logo, cliVersion) {
       if (args.names.length === 0) {
         const msg = `${colors.blue.bold(logo)}\n`
-        + `\n${cliVersion}\n\n`
-        + `* List commands: ${colors.blue.bold('bsq list')}\n`
-        +  `* Help: ${colors.blue.bold('bsq help [command]')}\n`
-        +  '* Docs: docs.bytesquash.com\n'
-        +  '* Chat: chat.bytesquash.com\n'
-        +  '* Bugs: github.com/ByteSquash/bytesquash/issues\n\n'
-        +  `* For debugging add ${colors.blue.bold('--debug')} flag\n`;
+          + `\n${cliVersion}\n\n`
+          + `* List commands: ${colors.blue.bold('bsq list')}\n`
+          + `* Help: ${colors.blue.bold('bsq help [command]')}\n`
+          + '* Docs: docs.bytesquash.com\n'
+          + '* Chat: chat.bytesquash.com\n'
+          + '* Bugs: github.com/ByteSquash/bytesquash/issues\n\n'
+          + `* For debugging add ${colors.blue.bold('--debug')} flag\n`;
 
         bsq.cli.log.console(msg.replace(/^/gm, ' '.repeat(1)));
 
@@ -151,9 +151,9 @@ module.exports = (() => {
 
       if (args.names[0] === 'help' && args.args.length === 0) {
         bsq.cli.log.error(
-          'Missing help command argument , please use ' +
-          `${colors.blue.bold(`\`${bin} help [command]\``)}` +
-          `\n\n... or ${colors.blue.bold(`\`${bin} list\``)} to get all available commands\n`
+          'Missing help command argument , please use '
+          + `${colors.blue.bold(`\`${bin} help [command]\``)}`
+          + `\n\n... or ${colors.blue.bold(`\`${bin} list\``)} to get all available commands\n`
         );
       }
 

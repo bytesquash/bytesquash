@@ -147,7 +147,7 @@ class ByteSquash {
         });
 
         this.vars.hooks = this.vars.hooks.concat(data);
-      };
+      }
     });
 
     /* load plugins hooks */
