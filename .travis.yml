@@ -13,7 +13,7 @@ script:
   - set -e
   - npm run eslint
   - npm run jsinspect
-  - npm test
+  # - npm test
 
 notifications:
   webhooks:
