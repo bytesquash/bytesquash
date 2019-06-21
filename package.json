@@ -65,7 +65,13 @@
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
+    "husky": "^2.4.1",
     "jest": "^24.8.0",
     "jsinspect": "^0.12.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run jsinspect && npm run eslint"
+    }
   }
 }
