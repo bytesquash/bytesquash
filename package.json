@@ -8,7 +8,11 @@
     "bsq": "bin/bin.js",
     "bytesquash": "bin/bin.js"
   },
-
+  "scripts": {
+    "test": "jest",
+    "eslint": "eslint . --cache",
+    "jsinspect": "jsinspect -t 30 -i ./bin/ ./lib/"
+  },
   "keywords": [
     "bytesquash",
     "fullstack",
@@ -35,6 +39,13 @@
     "iot",
     "internet of things",
     "apps"
+  ],
+  "contributors": [
+    {
+      "name": "Nick Chisiu",
+      "email": "chisiu.n@gmail.com",
+      "web": "https://ByteSquash.com/"
+    }
   ],
   "license": "MIT",
   "dependencies": {
