@@ -49,6 +49,8 @@ module.exports = (() => {
       }
 
       command.commands.forEach((cmdObj) => {
+        const cmd = cmdObj.arg.join(':');
+
         if (_.has(this.commands, cmd)) {
           if (_.has(cmdObj, 'lifecycle')) {
             this.commands[cmd].lifecycle = _.concat(this.commands[cmd].lifecycle, cmdObj.lifecycle);
@@ -107,9 +109,10 @@ module.exports = (() => {
       });
     }
 
-    index(args, logo) {
+    index(args, logo, cliVersion) {
       if (args.names.length === 0) {
         const msg = `${colors.blue.bold(logo)}\n`
+        + `\n${cliVersion}\n\n`
         + `* List commands: ${colors.blue.bold('bsq list')}\n`
         +  `* Help: ${colors.blue.bold('bsq help [command]')}\n`
         +  '* Docs: docs.bytesquash.com\n'
@@ -139,12 +142,12 @@ module.exports = (() => {
       logo = `${logo}|   __ \\.--.--.|  |_.-----.    |     __|.-----.--.--.---.-.-----.|  |--.\n`;
       logo = `${logo}|   __ <|  |  ||   _|  -__|    |__     ||  _  |  |  |  _  |__ --||     |\n`;
       logo = `${logo}|______/|___  ||____|_____|    |_______||__   |_____|___._|_____||__|__|\n`;
-      logo = `${logo}        |_____|                            |__|             ${cliVersion}\n`;
+      logo = `${logo}        |_____|                            |__|             \n`;
 
       let errorMsg = `Command "${colors.green(hintCmd)}" not found  ... \n`;
       const availableHelpCmds = [];
 
-      this.index(args, logo);
+      this.index(args, logo, cliVersion);
 
       if (args.names[0] === 'help' && args.args.length === 0) {
         bsq.cli.log.error(
