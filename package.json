@@ -9,7 +9,7 @@
     "bytesquash": "bin/bin.js"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "eslint": "eslint . --cache",
     "jsinspect": "jsinspect -t 30 -i ./bin/ ./lib/"
   },
@@ -59,6 +59,7 @@
     "yaml-include": "^1.2.0"
   },
   "devDependencies": {
+    "coveralls": "^3.0.4",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
