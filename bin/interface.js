@@ -80,14 +80,18 @@ module.exports = (() => {
 
       const helpCmdMsg = colors.yellow(`\n\n$ ${bin} ${colors.blue.bold('help')} ${args.names.join(':')}`);
 
+      const checkErrors = (value, key) => {
+        if (!_.has(args.options, key) && !_.has(args.flags, value.flag)) {
+          bsq.cli.log.error(`Missing option ${colors.green(`--${key}`)}  ${helpCmdMsg}`);
+        } else if (!args.options[key] && !args.flags[value.flag]) {
+          bsq.cli.log.error(`Missing option ${colors.green(`--${key}`)} `
+            + `${colors.red('value')} ${helpCmdMsg}`);
+        }
+      };
+
       const check = (value, key) => {
         if (value.required === true) {
-          if (!_.has(args.options, key) && !_.has(args.flags, value.flag)) {
-            bsq.cli.log.error(`Missing option ${colors.green(`--${key}`)}  ${helpCmdMsg}`);
-          } else if (!args.options[key] && !args.flags[value.flag]) {
-            bsq.cli.log.error(`Missing option ${colors.green(`--${key}`)} `
-              + `${colors.red('value')} ${helpCmdMsg}`);
-          }
+          checkErrors(value, key);
         } else if (!args.options[key] && value.defaultValue !== null) {
           args.options[key] = value.defaultValue;
         }
@@ -144,6 +148,10 @@ module.exports = (() => {
       logo = `${logo}|______/|___  ||____|_____|    |_______||__   |_____|___._|_____||__|__|\n`;
       logo = `${logo}        |_____|                            |__|             \n`;
 
+      this.display(logo, command, hintCmd, cliVersion, args);
+    }
+
+    display(logo, command, hintCmd, cliVersion, args) {
       let errorMsg = `Command "${colors.green(hintCmd)}" not found  ... \n`;
       const availableHelpCmds = [];
 
